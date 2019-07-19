@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+{% load model_field %}
+
+{% block bread_crumb %}
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Tables</a></li>
+            <li class="breadcrumb-item active">DataTables</li>
+        </ol>
+{% endblock %}
+
+{% block page_content %}
+  <!-- Panel Table Add Row -->
+  <div class="panel">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-15">
+            <button id="addToTable" class="btn btn-primary" type="button">
+              <i class="icon md-plus" aria-hidden="true"></i> Add row
+            </button>
+          </div>
+        </div>
+      </div>
+      <table class="table table-bordered table-hover table-striped" cellspacing="0" id="exampleAddRow">
+        <thead>
+          <tr>
+            {% for field in fields %}
+              <th>{{ field }}</th>
+            {% endfor %}
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in list %}
+          <tr class="gradeA">
+            {% for field in fields %}
+              <td>{{item|field:field}}</td>
+            {% endfor %}
+            <td class="actions">
+              <a href="#" class="btn btn-sm btn-icon btn-pure btn-default on-editing save-row"
+                data-toggle="tooltip" data-original-title="Save" hidden><i class="icon md-wrench" aria-hidden="true"></i></a>
+              <a href="#" class="btn btn-sm btn-icon btn-pure btn-default on-editing cancel-row"
+                data-toggle="tooltip" data-original-title="Delete" hidden><i class="icon md-close" aria-hidden="true"></i></a>
+              <a href="#" class="btn btn-sm btn-icon btn-pure btn-default on-default edit-row"
+                data-toggle="tooltip" data-original-title="Edit"><i class="icon md-edit" aria-hidden="true"></i></a>
+              <a href="#" class="btn btn-sm btn-icon btn-pure btn-default on-default remove-row"
+                data-toggle="tooltip" data-original-title="Remove"><i class="icon md-delete" aria-hidden="true"></i></a>
+            </td>
+          </tr>          
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% csrf_token %}
+  <!-- End Panel Table Add Row -->
+{% endblock %}
+
+{% block page_styles %}
+    <link rel="stylesheet" href="{% static ''|add:resource|add:'.css' %}">
+{% endblock %}
+{% block page_scripts %}
+    <script src="{% static 'global/js/Plugin/asscrollable.js' %}"></script>
+    <script src="{% static 'global/js/Plugin/slidepanel.js' %}"></script>
+    <script src="{% static 'global/js/Plugin/switchery.js' %}"></script>
+    <script src="{% static 'global/js/Plugin/datatables.js' %}"></script>
+    <script src="{% static 'global/js/Plugin/bootstrap-select.js' %}"></script>
+    <script src="{% static 'global/js/Plugin/bootstrap-datepicker.js' %}"></script>
+
+    <script>var base_url = "/{{ resource }}/"</script>
+    <script src="{% static ''|add:resource|add:'.js' %}"></script>
+{% endblock %}

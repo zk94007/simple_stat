@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <meta name="description" content="bootstrap material admin template">
+        <meta name="author" content="">
+
+        <title>{{ title }}</title>
+
+        <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="{% static 'global/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'global/css/bootstrap-extend.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/site.min.css' %}">
+
+        <!-- Plugins -->
+        <link rel="stylesheet" href="{% static 'global/vendor/animsition/animsition.css' %}">
+        <link rel="stylesheet" href="{% static 'global/vendor/asscrollable/asScrollable.css' %}">
+        <link rel="stylesheet" href="{% static 'global/vendor/switchery/switchery.css' %}">
+        <link rel="stylesheet" href="{% static 'global/vendor/intro-js/introjs.css' %}">
+        <link rel="stylesheet" href="{% static 'global/vendor/slidepanel/slidePanel.css' %}">
+        <link rel="stylesheet" href="{% static 'global/vendor/flag-icon-css/flag-icon.css' %}">
+        <link rel="stylesheet" href="{% static 'global/vendor/waves/waves.css' %}">
+        <link rel="stylesheet" href="{% static 'global/vendor/datatables.net-bs4/dataTables.bootstrap4.css' %}">
+        <link rel="stylesheet" href="{% static 'global/vendor/datatables.net-fixedheader-bs4/dataTables.fixedheader.bootstrap4.css' %}">
+        <link rel="stylesheet" href="{% static 'global/vendor/datatables.net-fixedcolumns-bs4/dataTables.fixedcolumns.bootstrap4.css' %}">
+        <link rel="stylesheet" href="{% static 'global/vendor/datatables.net-rowgroup-bs4/dataTables.rowgroup.bootstrap4.css' %}">
+        <link rel="stylesheet" href="{% static 'global/vendor/datatables.net-scroller-bs4/dataTables.scroller.bootstrap4.css' %}">
+        <link rel="stylesheet" href="{% static 'global/vendor/datatables.net-select-bs4/dataTables.select.bootstrap4.css' %}">
+        <link rel="stylesheet" href="{% static 'global/vendor/datatables.net-responsive-bs4/dataTables.responsive.bootstrap4.css' %}">
+        <link rel="stylesheet" href="{% static 'global/vendor/datatables.net-buttons-bs4/dataTables.buttons.bootstrap4.css' %}">
+        <link rel="stylesheet" href="{% static 'global/vendor/bootstrap-select/bootstrap-select.css' %}">
+        <link rel="stylesheet" href="{% static 'global/vendor/bootstrap-datepicker/bootstrap-datepicker.css' %}">
+        {% block page_styles %}{% endblock %}
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="{% static 'global/fonts/font-awesome/font-awesome.css' %}">
+        <link rel="stylesheet" href="{% static 'global/fonts/material-design/material-design.min.css' %}">
+        <link rel="stylesheet" href="{% static 'global/fonts/brand-icons/brand-icons.min.css' %}">
+        <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
+
+        <!--[if lt IE 9]>
+        <script src="{% static 'global/vendor/html5shiv/html5shiv.min.js' %}"></script>
+        <![endif]-->
+
+        <!--[if lt IE 10]>
+        <script src="{% static 'global/vendor/media-match/media.match.min.js' %}"></script>
+        <script src="{% static 'global/vendor/respond/respond.min.js' %}"></script>
+        <![endif]-->
+
+        <!-- Scripts -->
+        <script src="{% static 'global/vendor/breakpoints/breakpoints.js' %}"></script>
+        <script>
+            Breakpoints();
+        </script>
+    </head>
+    <body class="animsition">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        {% block navigation %}
+            {% include "navigation.html" %}
+        {% endblock %}
+        <!-- Page -->
+        <div class="page">
+            <div class="page-header">
+                <h1 class="page-title">{{ title }}</h1>
+                {% block bread_crumb %}
+                {% endblock %}
+            </div>
+        
+            <div class="page-content">
+                {% block page_content %}
+                {% endblock %}
+            </div>
+        </div>
+        <!-- End Page -->
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="site-footer-legal">© 2019 <a href="http://themeforest.net/item/remark-responsive-bootstrap-admin-template/11989202">Remark</a></div>
+            <div class="site-footer-right">
+                Crafted with <i class="red-600 icon md-favorite"></i> by <a href="https://themeforest.net/user/creation-studio">Creation Studio</a>
+            </div>
+        </footer>
+
+        <!-- Core  -->
+        <script src="{% static 'global/vendor/babel-external-helpers/babel-external-helpers.js' %}"></script>
+        <script src="{% static 'global/vendor/jquery/jquery.js' %}"></script>
+        <script src="{% static 'global/vendor/popper-js/umd/popper.min.js' %}"></script>
+        <script src="{% static 'global/vendor/bootstrap/bootstrap.js' %}"></script>
+        <script src="{% static 'global/vendor/animsition/animsition.js' %}"></script>
+        <script src="{% static 'global/vendor/mousewheel/jquery.mousewheel.js' %}"></script>
+        <script src="{% static 'global/vendor/asscrollbar/jquery-asScrollbar.js' %}"></script>
+        <script src="{% static 'global/vendor/asscrollable/jquery-asScrollable.js' %}"></script>
+        <script src="{% static 'global/vendor/ashoverscroll/jquery-asHoverScroll.js' %}"></script>
+        <script src="{% static 'global/vendor/waves/waves.js' %}"></script>
+        
+        <!-- Plugins -->
+        <script src="{% static 'global/vendor/switchery/switchery.js' %}"></script>
+        <script src="{% static 'global/vendor/intro-js/intro.js' %}"></script>
+        <script src="{% static 'global/vendor/screenfull/screenfull.js' %}"></script>
+        <script src="{% static 'global/vendor/slidepanel/jquery-slidePanel.js' %}"></script>
+        <script src="{% static 'global/vendor/datatables.net/jquery.dataTables.js' %}"></script>
+        <script src="{% static 'global/vendor/datatables.net-bs4/dataTables.bootstrap4.js' %}"></script>
+        <script src="{% static 'global/vendor/datatables.net-fixedheader/dataTables.fixedHeader.js' %}"></script>
+        <script src="{% static 'global/vendor/datatables.net-fixedcolumns/dataTables.fixedColumns.js' %}"></script>
+        <script src="{% static 'global/vendor/datatables.net-rowgroup/dataTables.rowGroup.js' %}"></script>
+        <script src="{% static 'global/vendor/datatables.net-scroller/dataTables.scroller.js' %}"></script>
+        <script src="{% static 'global/vendor/datatables.net-responsive/dataTables.responsive.js' %}"></script>
+        <script src="{% static 'global/vendor/datatables.net-responsive-bs4/responsive.bootstrap4.js' %}"></script>
+        <script src="{% static 'global/vendor/datatables.net-buttons/dataTables.buttons.js' %}"></script>
+        <script src="{% static 'global/vendor/datatables.net-buttons/buttons.html5.js' %}"></script>
+        <script src="{% static 'global/vendor/datatables.net-buttons/buttons.flash.js' %}"></script>
+        <script src="{% static 'global/vendor/datatables.net-buttons/buttons.print.js' %}"></script>
+        <script src="{% static 'global/vendor/datatables.net-buttons/buttons.colVis.js' %}"></script>
+        <script src="{% static 'global/vendor/datatables.net-buttons-bs4/buttons.bootstrap4.js' %}"></script>
+        <script src="{% static 'global/vendor/asrange/jquery-asRange.min.js' %}"></script>
+        <script src="{% static 'global/vendor/bootbox/bootbox.js' %}"></script>
+        <script src="{% static 'global/vendor/bootstrap-datepicker/bootstrap-datepicker.js' %}"></script>
+        <script src="{% static 'global/vendor/bootstrap-select/bootstrap-select.js' %}"></script>
+        
+        <!-- Scripts -->
+        <script src="{% static 'global/js/Component.js' %}"></script>
+        <script src="{% static 'global/js/Plugin.js' %}"></script>
+        <script src="{% static 'global/js/Base.js' %}"></script>
+        <script src="{% static 'global/js/Config.js' %}"></script>
+        
+        <script src="{% static 'js/Section/Menubar.js' %}"></script>
+        <script src="{% static 'js/Section/GridMenu.js' %}"></script>
+        <script src="{% static 'js/Section/Sidebar.js' %}"></script>
+        <script src="{% static 'js/Section/PageAside.js' %}"></script>
+        <script src="{% static 'js/Plugin/menu.js' %}"></script>
+        
+        <script src="{% static 'global/js/config/colors.js' %}"></script>
+        <script src="{% static 'js/config/tour.js' %}"></script>
+        
+        <script src="{% static 'js/Site.js' %}"></script>
+        <script src="{% static 'js/csrf.js' %}"></script>
+        <!-- Page -->
+        {% block page_scripts %}
+        {% endblock %}
+    </body>
+</html>
